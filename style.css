@@ -1,0 +1,264 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: 0.5s;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: gray;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #040b14;
+    border-radius: 1rem;
+    border-left: 3px solid transparent;
+    border-right: 2px solid transparent;
+    background-clip: content-box;
+}
+
+/* header */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    transition: all ease-in-out 0.5s;
+    z-index: 9997;
+    transition: all 0.5s;
+    padding: 0 15px;
+    background: #040b14;
+    overflow-y: auto
+}
+
+header img {
+    width: 40%;
+    margin: 15px auto;
+    display: block;
+    border: 8px solid #2c2f3f;
+}
+
+header .pname {
+    margin-left: 45px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+header .social-link {
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+
+header .social-link i:hover {
+    color: white;
+    transition: 0.5s;
+}
+
+header .navbar ul li {
+    list-style: lower-greek;
+    margin-bottom: 20px;
+    margin-right: 15px;
+
+}
+
+header .navbar ul li a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+header .navbar ul li a:hover {
+    opacity: 0.7;
+    border-bottom: 1px solid gray;
+    transition: 0.3s;
+}
+
+/* active navlink */
+
+.activelink {
+    opacity: 0.7;
+    border-bottom: 1px solid gray;
+}
+
+/* menu icon*/
+
+.icon {
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+    display: none;
+
+}
+
+/* section */
+
+section {
+    margin-left: 300px;
+}
+
+/* parallax */
+
+section .parallax {
+    height: 100vh;
+    background: #000;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+    background-image: url('parallax.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .parallax .pname {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+    color: white;
+}
+
+section .parallax .im {
+    font-size: 40px;
+    font-weight: 700;
+    color: #040b14;
+}
+
+section .parallax .typing {
+    font-size: 40px;
+    font-weight: 700;
+    color: yellow;
+}
+
+
+/* back-to-top */
+#btn-back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    font-size: 20px;
+    display: none;
+    background-color: #1f5297;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50px;
+    z-index: 1;
+}
+
+/* #btn-back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 15px;
+    display: none;
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+    line-height: 20px;
+    background-color: #E2B780;
+    border-color: #E2B780;
+    color: white;
+} */
+
+/* about */
+
+section .about .row .bio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* skills */
+
+.skills .skiper {
+    margin-top: 15px;
+}
+
+.skills .progress {
+    height: 18px;
+    border-radius: 0;
+}
+
+/* resume */
+
+.resume .row .resume-detail {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid #1f5297;
+    position: relative;
+}
+
+.resume .row .resume-detail::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    left: -9px;
+    top: 0;
+    background: #fff;
+    border: 2px solid #1f5297;
+}
+
+.resume .row .resume-detail h6 {
+    width: 20%;
+    font-style: italic;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+.resume .row .resume-detail ul li {
+    padding-bottom: 15px;
+}
+
+/* contact */
+
+
+@media only screen and (min-width: 350px) and (max-width: 800px) {
+
+    header {
+        left: -100%;
+        transition: 2s;
+    }
+
+    header.active {
+        left: 0;
+        transition: 2s;
+    }
+
+    .icon {
+        display: block;
+    }
+
+    .icon.active {
+        display: block;
+        color: red;
+        z-index: 99;
+    }
+
+    section {
+        margin-left: 0;
+    }
+
+    .about .row h3 {
+        padding: 3px 10px;
+    }
+
+    .about .row p {
+        padding: 3px 10px;
+    }
+
+    .resume .row .resume-detail h6 {
+        width: 30%;
+    }
+
+}
